@@ -8,34 +8,48 @@ class Program
 {
     public static void Main(string[] args)
     {
-        double userInteger = 0;
-        double pi = 0;
-        double number = 1;
-        var positiveOrNegative = "minus";
+        // This function calculates the value of π
+        const int NUMERATOR = 4;
+        int userInput;
+        int counter = 0;
+        double answer = 0;
+        double denominator = 1;
 
-        Console.Write("Enter a positive number: ");
-        userInteger = Convert.ToInt32(Console.ReadLine());
+        // input
+        Console.WriteLine("This program calculates the value of π");
 
-        pi = 4.00 / number;
-        while (userInteger > 1.00)
+        Console.WriteLine("");
+        Console.Write("Please input a positive whole number: ");
+        userInput = Convert.ToInt32(Console.ReadLine());
+
+        // process
+        if (userInput < 0)
         {
-            if (positiveOrNegative == "minus")
+            Console.Clear();
+            Console.WriteLine("Input a positive integer.");
+        }
+        else
         {
-            number = number + 2.00;
-            pi = pi - (4.00 / number);
-            positiveOrNegative = "plus";
+            while (counter < userInput)
+            {
+                if (counter % 2 == 0)
+                {
+                    denominator = counter * 2 + 1;
+                    answer += NUMERATOR / denominator;
+                }
+                else
+                {
+                    denominator = counter * 2 + 1;
+                    answer += -(NUMERATOR / denominator);
+                }
+
+                counter++;
+            }
+            // output
+            Console.WriteLine("");
+            Console.WriteLine("The value of π is " + answer);
         }
-        else if (positiveOrNegative == "plus")
-        {
-            number = number + 2.00;
-            pi = pi + (4.00 / number);
-            positiveOrNegative = "minus";
-        }
-        userInteger = userInteger - 1;
-        }
-        positiveOrNegative = "minus";
-        number = 1;
-        Console.WriteLine("Your answer is: " + pi.ToString("0.00"));
-        Console.Write("Done.");
+
+        Console.WriteLine("\nDone.");
     }
 }
