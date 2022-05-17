@@ -8,7 +8,7 @@ class Program
 {
     public static void Main(string[] args)
     {
-        // This function calculates the value of π
+        // This function calculates the value of PI
         const int NUMERATOR = 4;
         int integer;
         int counter = 0;
