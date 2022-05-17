@@ -10,27 +10,27 @@ class Program
     {
         // This function calculates the value of π
         const int NUMERATOR = 4;
-        int userInput;
+        int integer;
         int counter = 0;
         double answer = 0;
         double denominator = 1;
 
         // input
-        Console.WriteLine("This program calculates the value of π");
+        Console.WriteLine("PI, with CSharp");
 
         Console.WriteLine("");
-        Console.Write("Please input a positive whole number: ");
-        userInput = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Please enter a positive integer: ");
+        integer = Convert.ToInt32(Console.ReadLine());
 
         // process
-        if (userInput < 0)
+        if (integer < 0)
         {
             Console.Clear();
-            Console.WriteLine("Input a positive integer.");
+            Console.WriteLine("This is not a positive integer. Please enter a positive integer");
         }
         else
         {
-            while (counter < userInput)
+            while (counter < integer)
             {
                 if (counter % 2 == 0)
                 {
@@ -47,7 +47,7 @@ class Program
             }
             // output
             Console.WriteLine("");
-            Console.WriteLine("The value of π is " + answer);
+            Console.WriteLine("The answer is: " + answer);
         }
 
         Console.WriteLine("\nDone.");
